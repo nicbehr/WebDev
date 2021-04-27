@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.app{
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.time-select, .sound-picker, .player-container{
+    flex: 1;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.player-container svg {
+    position: absolute;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    pointer-events: none;
+}
+
+.time-display{
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    font-size: 50px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+video{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    min-width: 100%; 
+    min-height: 100%;    
+    z-index:-10;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.time-select button,
+.sound-picker button {
+    color: white;
+    width: 30%;
+    height: 10%;
+    background: none;
+    border: 2px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: color 0.5s ease, background 0.5s ease;
+}
+.time-select button{
+    padding: 5px;
+}
+
+.time-select button:hover{
+    color: black;
+    background:white;
+}
+
+.sound-picker button{
+    border: none;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    padding: 30px;
+}
+
+.sound-picker button:nth-child(1){
+    background: #4972a1
+}
+.sound-picker button:nth-child(2){
+    background: #a14f49
+}
+
+.sound-picker button img {
+    height: 100%;
+}
+
+
+@media (max-width: 767px){
+    .time-select, .sound-picker{
+         flex-direction: row;
+         justify-content: space-evenly;
+         height: 30%;
+    }
+    .time-select button{
+        margin: 20px;
+        padding: 5px;
+        width: 25%;
+        height: 30%
+    }
+    .player-container{
+        height:40%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center
+    }
+    .player-container svg {
+        position: absolute;
+        height: 50%;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        pointer-events: none;
+    }
+    .player-container img {
+        transform: translate(10%, -80%)
+    }
+    .player-container h3{
+        font-size: 60px;
+    }
+}
